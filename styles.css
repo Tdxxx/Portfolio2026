@@ -23,6 +23,13 @@
 
 *, *::before, *::after{ box-sizing: border-box; }
 
+@media (prefers-reduced-motion: no-preference){
+  html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 64px; /* offset for the sticky 64px header */
+  }
+}
+
 body{
   margin:0;
   background: var(--black);
@@ -34,6 +41,59 @@ body{
 
 img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
+
+::selection{ background: var(--maroon-bright); color: var(--white); }
+
+:focus-visible{
+  outline: 1px solid var(--maroon-bright);
+  outline-offset: 3px;
+}
+
+/* ============ CUSTOM CURSOR ============
+   A small solid dot tracks the mouse exactly; a larger hairline ring
+   trails it with a bit of ease and blooms open over links/buttons.
+   Mouse-only — untouched on touch devices, and simplified to instant
+   tracking (no easing loop) when reduced motion is requested. */
+@media (hover: hover) and (pointer: fine){
+  body.has-fine-pointer,
+  body.has-fine-pointer a,
+  body.has-fine-pointer button{ cursor: none; }
+}
+
+.cursor-dot,
+.cursor-ring{
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.cursor-dot{
+  width: 5px; height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  background: var(--maroon-bright);
+}
+
+.cursor-ring{
+  width: 32px; height: 32px;
+  margin: -16px 0 0 -16px;
+  border: 1px solid var(--grey);
+  transition: opacity .25s ease, transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+body.has-fine-pointer .cursor-dot,
+body.has-fine-pointer .cursor-ring{ opacity: 1; }
+
+.cursor-ring.is-active{
+  transform: scale(1.7);
+  background: rgba(122,26,31,.18);
+  border-color: var(--maroon-bright);
+}
+
+.cursor-ring.is-pressed{ transform: scale(1.1); }
 
 /* ============ HEADER / NAV ============ */
 .header{
@@ -48,15 +108,28 @@ a{ color:inherit; text-decoration:none; }
   font-family: var(--font-display);
   font-size: 1.1rem;
 }
-.navabr{
-  display:flex; gap: 40px;
+.navbar{
+  display:flex; align-items:center; gap: 40px;
 }
-.navabr a{
+.navbar a{
   font-size:.95rem;
   color: var(--grey);
   transition: color .2s ease;
 }
-.navabr a:hover{ color: var(--white); }
+.navbar a:hover{ color: var(--white); }
+
+.navbar a.nav-contact{
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 20px;
+  padding: 7px 18px;
+  transition: border-color .2s ease, background .2s ease;
+}
+.navbar a.nav-contact:hover{
+  color: var(--white);
+  border-color: var(--maroon-bright);
+  background: rgba(122,26,31,.15);
+}
 
 /* ============ HERO ============ */
 .Hero{
@@ -221,68 +294,106 @@ a{ color:inherit; text-decoration:none; }
   #portfoliocards{ grid-template-columns: 1fr; }
 }
 
-/* ============ EDUCATION ============ */
+/* ============ EDUCATION ============
+   Kept the original idea intact: a row of portrait stills that develop
+   from grayscale into color, like photos coming out of a darkroom.
+   What was actually broken — the institution name lived at opacity:0
+   with no non-hover fallback, so on any touch device (i.e. most
+   visitors) it was never readable at all; the name was also set at
+   4rem uppercase, which overflows a 4:5 card long before "Business
+   and Technology University" finishes rendering; and the grid had no
+   container or gap, unlike every other section on the site. Fixed all
+   three, kept the hover as an enhancement rather than a gate. */
 .Education{
   background: var(--black);
+  padding: 100px 40px;
 }
 .Education h1{
   font-family: var(--font-display);
   font-weight: 500;
+  font-style: italic;
   text-align:center;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
-  padding-top: 60px;
-  margin: 0 0 40px;
+  margin: 0 0 56px;
 }
 #educationcardsrt{
+  max-width: 1200px;
+  margin: 0 auto;
   display:grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  counter-reset: edu;
 }
 .educationcard{
+  counter-increment: edu;
   position:relative;
   aspect-ratio: 4/5;
   overflow:hidden;
-  background: #2a2a2a;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   display:flex; align-items:flex-end;
-  padding: 32px;
+  padding: 28px;
+  transition: border-color .3s ease;
+}
+.educationcard:hover,
+.educationcard:focus-within{
+  border-color: var(--maroon-bright);
 }
 .educationcard img{
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
   filter: grayscale(100%);
-  transition: filter .4s ease, transform .4s ease;
+  transition: filter .5s ease, transform .5s ease;
 }
 .educationcard::after{
   content:"";
   position:absolute; inset:0;
-  background: linear-gradient(0deg, rgba(0,0,0,.75), transparent 55%);
+  background: linear-gradient(0deg, rgba(0,0,0,.82), rgba(0,0,0,.25) 55%, transparent 80%);
   transition: background .4s ease;
+  pointer-events:none;
+}
+/* small spec number, top-left — echoes the same numbering device
+   used on the services cards, tying the two sections together */
+.educationcard::before{
+  content: counter(edu, decimal-leading-zero);
+  position:absolute; z-index:1; top:20px; left:20px;
+  font-family: var(--font-body);
+  font-weight:600;
+  font-size:.7rem;
+  letter-spacing:.08em;
+  color: var(--maroon-bright);
 }
 .educationcard .educationcardtext{
   position:relative; z-index:1;
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 4rem;
-  text-transform: uppercase;
-  line-height: 1.15;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.25;
+  color: var(--white);
   margin:0;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity .4s ease, transform .4s ease;
+  transition: transform .4s ease;
 }
 
-.educationcard:hover img{
+.educationcard:hover img,
+.educationcard:focus-within img{
   filter: grayscale(0%);
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
-.educationcard:hover::after{
-  background: linear-gradient(0deg, rgba(0,0,0,.85), rgba(0,0,0,.2) 60%);
+.educationcard:hover::after,
+.educationcard:focus-within::after{
+  background: linear-gradient(0deg, rgba(0,0,0,.9), rgba(0,0,0,.35) 60%, transparent 85%);
 }
-.educationcard:hover .educationcardtext{
-  opacity: 1;
-  transform: translateY(0);
+.educationcard:hover .educationcardtext,
+.educationcard:focus-within .educationcardtext{
+  transform: translateY(-4px);
 }
 
 @media (max-width: 860px){
+  #educationcardsrt{ grid-template-columns: 1fr 1fr; gap: 16px; }
+}
+@media (max-width: 560px){
   #educationcardsrt{ grid-template-columns: 1fr; }
+  .educationcard{ padding: 22px; }
 }
 
 /* ============ PORTFOLIO CARD CONTENT (index.html) ============ */
@@ -756,16 +867,31 @@ footer{
 
 /* -----------------Servicepage-------// */
 .headerbanner{
-  height: 50vh;
+  position:relative;
+  isolation:isolate; /* contains the grain overlay, same trick as #contact-text */
+  min-height: 50vh;
   display:flex;
   background:
-    linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    radial-gradient(140% 100% at 50% 20%, rgba(122,26,31,.35), rgba(10,8,8,.75) 70%),
     url('../image/gradient-2560x1440.gif') center/cover no-repeat;
   flex-direction:column;
   align-items:center;
   justify-content:center;
+  text-align:center;
   padding: 80px 40px;
+  gap: 20px;
+  overflow:hidden;
 }
+.headerbanner::before{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+  opacity:.15;
+  mix-blend-mode: overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index:0;
+}
+.headerbanner > *{ position:relative; z-index:1; }
 
 .services-section{
   min-height: calc(100vh - 64px); /* fills the viewport below the sticky nav */
@@ -775,38 +901,91 @@ footer{
   align-items:center;
   justify-content:center;
   padding: 80px 40px;
+  gap: 64px;
 }
 
 .entreetexts{
-  width: 1180px;
+  width: 100%;
+  max-width: 1200px;
   display:flex;
   flex-direction:row;
-  gap: 25%;
+  gap: 60px;
 }
+.Text1, .Text2{ flex: 1 1 0; min-width: 0; }
 
-.service-item{
-  width: 370px;
-  height: 497px;
-  padding: 28px;
-  margin: 20px;
+.Text2 h3{
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--maroon-bright);
+  margin: 0 0 14px;
 }
-
-.service-img{
-  border-radius: 7px;
-  width: 370px;
-  height: 262px;
+.Text2 p{
+  color: var(--grey);
+  font-size: .95rem;
+  line-height: 1.75;
+  margin:0;
 }
 
 .service-items{
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.service-item{
+  width: 370px;
+  max-width: 100%;
+  height: auto;
+  padding: 28px;
+  margin: 0;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap: 14px;
+  background: rgba(10,6,6,.55);
+  border: 1px solid var(--card-border);
+  transition: border-color .25s ease, transform .25s ease;
+}
+.service-item:hover,
+.service-item:focus-within{
+  border-color: var(--maroon-bright);
+  transform: translateY(-4px);
+}
+
+.service-item h2{
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.service-item p{
+  color: var(--grey-dim);
+  font-size: .9rem;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+.service-img{
+  border-radius: 7px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 370 / 262;
+  object-fit: cover;
 }
 
 .serviceButton{
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
   width:138px;
@@ -820,26 +999,66 @@ footer{
   letter-spacing: .15em;
   font-size: .85rem;
   cursor:pointer;
-  transition: background .2s ease;
+  transition: background .2s ease, border-color .2s ease, gap .2s ease;
+  margin-top: 4px;
+}
+.serviceButton img{
+  width: 14px;
+  transition: transform .2s ease;
+}
+.serviceButton:hover,
+.serviceButton:focus-visible{
+  background: rgba(122,26,31,.15);
+  border-color: var(--maroon-bright);
+  gap: 14px;
+}
+.serviceButton:hover img,
+.serviceButton:focus-visible img{
+  transform: translateX(2px);
 }
 
 #servicestitle{
-  font-weight: 1000;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-style: italic;
   text-align:center;
-  font-size: 4rem;
-  margin: 0 0 56px;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  line-height: 1.05;
+  margin: 0;
 }
 
 #servicedescription{
   font-weight: 400;
   text-align:center;
   font-size: 1rem;
-  margin: 0 0 56px;
+  color: var(--grey);
+  max-width: 46ch;
+  line-height: 1.7;
+  margin: 0;
 }
 
 #servicet{
-  font-weight: 1000;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-style: italic;
   text-align:left;
-  font-size: 2rem;
-  margin: 0 0 56px;
+  font-size: clamp(1.6rem, 3.4vw, 2rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+@media (max-width: 860px){
+  .entreetexts{
+    flex-direction: column;
+    gap: 32px;
+    text-align:center;
+  }
+  #servicet{ text-align:center; }
+  .Text2 h3{ margin-left:auto; margin-right:auto; }
+}
+
+@media (max-width: 640px){
+  .headerbanner{ padding: 60px 24px; min-height: 44vh; }
+  .services-section{ padding: 56px 24px; gap: 48px; }
+  .service-item{ width: 100%; max-width: 420px; }
 }

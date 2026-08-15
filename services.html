@@ -5,17 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrimsonMediaVisuuals</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo">Portfolio</a>
 
-        <nav class="navabr">
+    <!-- custom cursor -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
+    <header class="header">
+        <a href="index.html" class="logo">Portfolio</a>
+
+        <nav class="navbar">
             <a href="index.html">Home</a>
-            <a href="work.html">Work</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html#portfoliocards">Work</a>
             <a href="#services">Services</a>
+            <a href="contact.html" class="nav-contact">Contact</a>
         </nav>
     </header>
 
@@ -27,12 +33,12 @@
         </p>
     </section>
 
-    <section class="services-section">
+    <section class="services-section" id="services">
 
         <div class="entreetexts">
             <div class="Text1">
                 <p id="servicet">What services exactly
-                    <br>Do I Provide</p>
+                    <br>do I provide</p>
             </div>
             <div class="Text2">
                 <h3>Services</h3>
@@ -45,24 +51,24 @@
         <div class="service-items">
 
             <div class="service-item">
-                <img src="./image/diigitaldesign.png" alt="service icon" class="service-img">
+                <img src="./image/diigitaldesign.png" alt="Digital design work sample" class="service-img">
                 <h2>Digital Design</h2>
                 <p>Websites, apps, and digital experiences designed with clarity and intent — built to look great and work seamlessly across every screen.</p>
-                <button class="serviceButton">connect <img src="./image/servicearrow.svg" alt="connect icon"></button>
+                <a href="contact.html" class="serviceButton">connect <img src="./image/servicearrow.svg" alt=""></a>
             </div>
 
             <div class="service-item">
-                <img src="./image/printdesig.png" alt="service icon" class="service-img">
+                <img src="./image/printdesig.png" alt="Print design work sample" class="service-img">
                 <h2>Print Design</h2>
                 <p>From business cards to full campaigns — print materials that translate your brand into something tangible and memorable.</p>
-                <button class="serviceButton">connect <img src="./image/servicearrow.svg" alt="connect icon"></button>
+                <a href="contact.html" class="serviceButton">connect <img src="./image/servicearrow.svg" alt=""></a>
             </div>
 
             <div class="service-item">
-                <img src="./image/branding.png" alt="service icon" class="service-img">
+                <img src="./image/branding.png" alt="Branding work sample" class="service-img">
                 <h2>Branding</h2>
                 <p>Logos, identity systems, and style guides that give your brand a consistent, recognizable voice across every touchpoint.</p>
-                <button class="serviceButton">connect <img src="./image/servicearrow.svg" alt="connect icon"></button>
+                <a href="contact.html" class="serviceButton">connect <img src="./image/servicearrow.svg" alt=""></a>
             </div>
 
         </div>
@@ -72,5 +78,7 @@
     <footer>
         <p>&copy; 2026 Portfolio. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
