@@ -65,9 +65,14 @@
       </div>
 
       <div class="admin-field">
-        <label>Cover image path</label>
+        <label>Cover image</label>
+        <div class="dropzone" id="cover_drop">
+          <img class="dropzone-preview" id="cover_preview" style="display:none;">
+          <span class="dropzone-label">Drag image here or click to browse</span>
+          <input type="file" accept="image/*" class="dropzone-file" id="cover_file">
+        </div>
         <input type="text" id="f_cover" placeholder="./image/eden-cover.png">
-        <span class="admin-hint">Place the actual image file in your <code>/image</code> folder with this exact filename — this field just points to it.</span>
+        <span class="admin-hint">Place the actual image file in your <code>/image</code> folder with this exact filename — the preview above is just so you can confirm you picked the right file, this field is what actually points to it.</span>
       </div>
 
       <div class="admin-row">
@@ -113,6 +118,71 @@
     <h2>4. Publish</h2>
     <p class="admin-note">Download the file, then replace <code>data/projects.json</code> in your project folder and push/upload it. That's what makes it live for visitors.</p>
     <button id="downloadBtn" class="btn-send" style="width:auto; padding:14px 28px;">Download projects.json</button>
+  </section>
+
+  <h1 class="admin-title" style="margin-top:60px;">Manage Testimonials</h1>
+  <p class="admin-note">
+    Same idea, separate file — <code>data/testimonials.json</code>, read by the Testimonials section on the homepage.
+    Copy your real reviews over from your <a href="https://www.upwork.com/freelancers/~01fd6470b8ec251bbb" target="_blank" style="text-decoration:underline;">Upwork profile</a> (client name, star rating, review text) — no scraping, just paste.
+  </p>
+
+  <section class="admin-panel">
+    <h2>1. Load existing testimonials.json</h2>
+    <p class="admin-note">Optional — load your current file to edit or add to it.</p>
+    <input type="file" id="loadTestimonialsFile" accept="application/json">
+    <span id="loadTestimonialsStatus" class="admin-note"></span>
+  </section>
+
+  <section class="admin-panel">
+    <h2>2. Add / Edit a Review</h2>
+    <form id="testimonialForm">
+      <input type="hidden" id="t_id">
+
+      <div class="admin-row">
+        <div class="admin-field">
+          <label>Client name *</label>
+          <input type="text" id="t_name" placeholder="e.g. J. Alvarez" required>
+        </div>
+        <div class="admin-field">
+          <label>Client role / company</label>
+          <input type="text" id="t_role" placeholder="e.g. Founder, Fairland RV-Park">
+        </div>
+        <div class="admin-field">
+          <label>Rating (1–5)</label>
+          <input type="number" id="t_rating" min="1" max="5" value="5">
+        </div>
+        <div class="admin-field">
+          <label>Source</label>
+          <input type="text" id="t_source" placeholder="Upwork" value="Upwork">
+        </div>
+      </div>
+
+      <div class="admin-field">
+        <label>Review text *</label>
+        <textarea id="t_quote" rows="4" placeholder="Paste the review text exactly as the client wrote it." required></textarea>
+      </div>
+
+      <div class="admin-field">
+        <label>Link to project (optional)</label>
+        <input type="text" id="t_link" placeholder="project.html?id=eden">
+      </div>
+
+      <div class="admin-actions">
+        <button type="submit" class="btn-send" style="width:auto; padding:14px 28px;">Save Review to List</button>
+        <button type="button" id="clearTestimonialForm" class="btn-secondary">Clear Form</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="admin-panel">
+    <h2>3. Current Reviews (<span id="testimonialCountLabel">0</span>)</h2>
+    <div id="testimonialList" class="admin-project-list"></div>
+  </section>
+
+  <section class="admin-panel">
+    <h2>4. Publish</h2>
+    <p class="admin-note">Download the file, then place it at <code>data/testimonials.json</code> and push it.</p>
+    <button id="downloadTestimonialsBtn" class="btn-send" style="width:auto; padding:14px 28px;">Download testimonials.json</button>
   </section>
 
 </main>
