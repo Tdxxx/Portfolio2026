@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimsonMediaVisuuals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">Portfolio</a>
+
+        <nav class="navabr">
+            <a href="index.html">Home</a>
+            <a href="index.html#portfoliocards">Work</a>
+            <a href="contact.html">Contact</a>
+            <a href="services.html">Services</a>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+
+        <div class="contact-content">
+
+            <div id="contact-text">
+                <h1>Get In Touch</h1>
+
+                <div class="contact-info">
+                    <img src="./image/ic_baseline-email.png" alt="Email icon">
+                    <p class="contact-type">tedo.mirianashvili@gmail.com</p>
+                </div>
+
+                <div class="contact-info">
+                    <img src="./image/ic_baseline-whatsapp.png" alt="WhatsApp icon">
+                    <p class="contact-type">(+995) 599-270-793</p>
+                </div>
+            </div>
+
+            <div id="functionalWindow">
+
+                <!-- REPLACE YOUR_FORM_ID below with the endpoint Formspree gives you,
+                     e.g. https://formspree.io/f/xabcwxyz -->
+                <form id="contactForm" action="https://formspree.io/f/mwleblwv" method="POST">
+
+                    <!-- sets the subject line of the email you receive -->
+                    <input type="hidden" name="_subject" value="New message from portfolio site">
+
+                    <div class="contact-form">
+                        <h3>Name :</h3>
+                        <div class="window">
+                            <input type="text" id="c_name" name="name" placeholder="JANNE DOE" required>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3>Email Address :</h3>
+                        <div class="window">
+                            <input type="email" id="c_email" name="email" placeholder="JANNE.DOE@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3>Subject :</h3>
+                        <div class="window">
+                            <input type="text" id="c_subject" name="subject" placeholder="Title....">
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3>Message :</h3>
+                        <div class="window">
+                            <textarea id="c_message" name="message" placeholder="Type in here...." required></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-send">SEND</button>
+                    <p class="form-note"></p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer></footer>
+
+    <script src="js/contact.js"></script>
+</body>
+</html>

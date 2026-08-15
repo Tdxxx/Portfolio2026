@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Manage Projects</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">Portfolio</a>
+    <nav class="navabr">
+        <a href="index.html">Home</a>
+        <a href="admin.html">Admin</a>
+    </nav>
+</header>
+
+<main class="admin-shell">
+
+  <h1 class="admin-title">Manage Projects</h1>
+  <p class="admin-note">
+    This page has <strong>no backend</strong> — it can't push changes to your live site by itself.
+    It builds a <code>projects.json</code> file for you to download, then commit/upload to your repo alongside your project images.
+    That file is what <code>index.html</code> and <code>project.html</code> read from.
+  </p>
+
+  <section class="admin-panel">
+    <h2>1. Load existing projects.json</h2>
+    <p class="admin-note">Optional — load your current file to edit or add to it. Skip this to start a fresh list.</p>
+    <input type="file" id="loadFile" accept="application/json">
+    <span id="loadStatus" class="admin-note"></span>
+  </section>
+
+  <section class="admin-panel">
+    <h2>2. Add / Edit a Project</h2>
+    <form id="projectForm">
+
+      <div class="admin-field">
+        <label>Project ID (used in the URL, no spaces) *</label>
+        <input type="text" id="f_id" placeholder="e.g. eden" required>
+      </div>
+
+      <div class="admin-field">
+        <label>Title (shown on the card) *</label>
+        <input type="text" id="f_title" placeholder="e.g. Eden" required>
+      </div>
+
+      <div class="admin-field">
+        <label>Client Name</label>
+        <input type="text" id="f_client" placeholder="e.g. Eden">
+      </div>
+
+      <div class="admin-field">
+        <label>Tags (comma separated, shown as pills on the card)</label>
+        <input type="text" id="f_tags" placeholder="e.g. Logo Design, Branding">
+      </div>
+
+      <div class="admin-field">
+        <label>Card text color</label>
+        <select id="f_textcolor">
+          <option value="light">Light text (dark cover image)</option>
+          <option value="dark">Dark text (light cover image)</option>
+        </select>
+      </div>
+
+      <div class="admin-field">
+        <label>Cover image path</label>
+        <input type="text" id="f_cover" placeholder="./image/eden-cover.png">
+        <span class="admin-hint">Place the actual image file in your <code>/image</code> folder with this exact filename — this field just points to it.</span>
+      </div>
+
+      <div class="admin-row">
+        <div class="admin-field">
+          <label>Type</label>
+          <input type="text" id="f_type" placeholder="Brochure">
+        </div>
+        <div class="admin-field">
+          <label>Pages</label>
+          <input type="text" id="f_pages" placeholder="12 pp">
+        </div>
+        <div class="admin-field">
+          <label>Format</label>
+          <input type="text" id="f_format" placeholder="A4 / A5">
+        </div>
+        <div class="admin-field">
+          <label>Year</label>
+          <input type="text" id="f_year" placeholder="2026">
+        </div>
+      </div>
+
+      <div class="admin-field">
+        <label>Brief / Description</label>
+        <textarea id="f_brief" rows="4" placeholder="What is this document for? Who is it for? What design freedom did you have?"></textarea>
+      </div>
+
+      <h3 class="admin-subtitle">Design Detail Images (up to 4)</h3>
+      <div id="detailFields"></div>
+
+      <div class="admin-actions">
+        <button type="submit" class="btn-send" style="width:auto; padding:14px 28px;">Save Project to List</button>
+        <button type="button" id="clearForm" class="btn-secondary">Clear Form</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="admin-panel">
+    <h2>3. Current Project List (<span id="countLabel">0</span>)</h2>
+    <div id="projectList" class="admin-project-list"></div>
+  </section>
+
+  <section class="admin-panel">
+    <h2>4. Publish</h2>
+    <p class="admin-note">Download the file, then replace <code>data/projects.json</code> in your project folder and push/upload it. That's what makes it live for visitors.</p>
+    <button id="downloadBtn" class="btn-send" style="width:auto; padding:14px 28px;">Download projects.json</button>
+  </section>
+
+</main>
+
+<footer></footer>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

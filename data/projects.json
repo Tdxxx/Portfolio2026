@@ -1,0 +1,78 @@
+[
+  {
+    "id": "eden",
+    "title": "Eden",
+    "tags": ["Logo Design", "Branding"],
+    "cover": "./image/eden-cover.png",
+    "cardTextColor": "light",
+    "client": "Eden",
+    "type": "Brochure",
+    "pages": "12 pp",
+    "format": "A4 / A5",
+    "year": "2026",
+    "brief": "What is this document for? Where is it distributed — print, PDF, both? Who reads it and what do they need to take away? Note how much design freedom you had vs. strict brand guidelines.",
+    "details": [
+      { "label": "Typography Detail", "caption": "Cropped headline treatment", "image": "./image/eden-detail-1.png" },
+      { "label": "Grid / Layout", "caption": "Show column grid logic", "image": "./image/eden-detail-2.png" },
+      { "label": "Special Element", "caption": "Pull quote, icon, infographic", "image": "./image/eden-detail-3.png" },
+      { "label": "Print Detail", "caption": "Finishing, paper, texture", "image": "./image/eden-detail-4.png" }
+    ]
+  },
+  {
+    "id": "sapperavi",
+    "title": "Sapperavi",
+    "tags": ["Logo Design", "UI/UX Redesign"],
+    "cover": "./image/sapperavi-cover.png",
+    "cardTextColor": "light",
+    "client": "Sapperavi",
+    "type": "UI/UX Redesign",
+    "pages": "8 screens",
+    "format": "Web",
+    "year": "2026",
+    "brief": "What is this document for? Where is it distributed — print, PDF, both? Who reads it and what do they need to take away? Note how much design freedom you had vs. strict brand guidelines.",
+    "details": [
+      { "label": "Typography Detail", "caption": "Cropped headline treatment", "image": "./image/sapperavi-detail-1.png" },
+      { "label": "Grid / Layout", "caption": "Show column grid logic", "image": "./image/sapperavi-detail-2.png" },
+      { "label": "Special Element", "caption": "Pull quote, icon, infographic", "image": "./image/sapperavi-detail-3.png" },
+      { "label": "Print Detail", "caption": "Finishing, paper, texture", "image": "./image/sapperavi-detail-4.png" }
+    ]
+  },
+  {
+    "id": "vtg-banners",
+    "title": "VTG - Banners",
+    "tags": ["Print Design"],
+    "cover": "./image/vtg-cover.png",
+    "cardTextColor": "dark",
+    "client": "VTG",
+    "type": "Banner Set",
+    "pages": "4 banners",
+    "format": "Various",
+    "year": "2026",
+    "brief": "What is this document for? Where is it distributed — print, PDF, both? Who reads it and what do they need to take away? Note how much design freedom you had vs. strict brand guidelines.",
+    "details": [
+      { "label": "Typography Detail", "caption": "Cropped headline treatment", "image": "./image/vtg-detail-1.png" },
+      { "label": "Grid / Layout", "caption": "Show column grid logic", "image": "./image/vtg-detail-2.png" },
+      { "label": "Special Element", "caption": "Pull quote, icon, infographic", "image": "./image/vtg-detail-3.png" },
+      { "label": "Print Detail", "caption": "Finishing, paper, texture", "image": "./image/vtg-detail-4.png" }
+    ]
+  },
+  {
+    "id": "fairland-rv-camp",
+    "title": "Fairland RV Camp",
+    "tags": ["Logo Design"],
+    "cover": "./image/fairland-cover.png",
+    "cardTextColor": "light",
+    "client": "Fairland RV Camp",
+    "type": "Logo & Identity",
+    "pages": "—",
+    "format": "Various",
+    "year": "2026",
+    "brief": "What is this document for? Where is it distributed — print, PDF, both? Who reads it and what do they need to take away? Note how much design freedom you had vs. strict brand guidelines.",
+    "details": [
+      { "label": "Typography Detail", "caption": "Cropped headline treatment", "image": "./image/fairland-detail-1.png" },
+      { "label": "Grid / Layout", "caption": "Show column grid logic", "image": "./image/fairland-detail-2.png" },
+      { "label": "Special Element", "caption": "Pull quote, icon, infographic", "image": "./image/fairland-detail-3.png" },
+      { "label": "Print Detail", "caption": "Finishing, paper, texture", "image": "./image/fairland-detail-4.png" }
+    ]
+  }
+]
