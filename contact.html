@@ -31,15 +31,15 @@
             <div id="contact-text">
                 <h1>Get In Touch</h1>
 
-                <div class="contact-info">
-                    <img src="./image/ic_baseline-email.png" alt="Email icon">
-                    <p class="contact-type">tedo.mirianashvili@gmail.com</p>
-                </div>
+                <a class="contact-info" href="mailto:tedo.mirianashvili@gmail.com">
+                    <img src="./image/ic_baseline-email.png" alt="" aria-hidden="true">
+                    <span class="contact-type">tedo.mirianashvili@gmail.com</span>
+                </a>
 
-                <div class="contact-info">
-                    <img src="./image/ic_baseline-whatsapp.png" alt="WhatsApp icon">
-                    <p class="contact-type">(+995) 599-270-793</p>
-                </div>
+                <a class="contact-info" href="https://wa.me/995599270793" target="_blank" rel="noopener noreferrer">
+                    <img src="./image/ic_baseline-whatsapp.png" alt="" aria-hidden="true">
+                    <span class="contact-type">(+995) 599-270-793</span>
+                </a>
             </div>
 
             <div id="functionalWindow">
@@ -52,34 +52,37 @@
                     <input type="hidden" name="_subject" value="New message from portfolio site">
 
                     <div class="contact-form">
-                        <h3>Name :</h3>
+                        <label for="c_name">Name :</label>
                         <div class="window">
-                            <input type="text" id="c_name" name="name" placeholder="JANNE DOE" required>
+                            <input type="text" id="c_name" name="name" placeholder="JANNE DOE" autocomplete="name" required>
                         </div>
                     </div>
 
                     <div class="contact-form">
-                        <h3>Email Address :</h3>
+                        <label for="c_email">Email Address :</label>
                         <div class="window">
-                            <input type="email" id="c_email" name="email" placeholder="JANNE.DOE@email.com" required>
+                            <input type="email" id="c_email" name="email" placeholder="JANNE.DOE@email.com" autocomplete="email" required>
                         </div>
                     </div>
 
                     <div class="contact-form">
-                        <h3>Subject :</h3>
+                        <label for="c_subject">Subject : <span class="field-optional">optional</span></label>
                         <div class="window">
                             <input type="text" id="c_subject" name="subject" placeholder="Title....">
                         </div>
                     </div>
 
                     <div class="contact-form">
-                        <h3>Message :</h3>
+                        <label for="c_message">Message :</label>
                         <div class="window">
                             <textarea id="c_message" name="message" placeholder="Type in here...." required></textarea>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn-send">SEND</button>
+                    <button type="submit" class="btn-send">
+                        <span>SEND</span>
+                        <img src="./image/servicearrow.svg" alt="" aria-hidden="true">
+                    </button>
                     <p class="form-note"></p>
 
                 </form>
