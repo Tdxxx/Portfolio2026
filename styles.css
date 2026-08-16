@@ -1122,3 +1122,82 @@ footer{
   .services-section{ padding: 56px 24px; gap: 48px; }
   .service-item{ width: 100%; max-width: 420px; }
 }
+/* ============ ADMIN PASSWORD GATE ============
+   Full-screen lock shown until js/admin-auth.js confirms the password
+   hash matches; the admin panel itself is hidden until then. */
+body:not(.admin-unlocked) .admin-shell{ display:none; }
+body.admin-unlocked .admin-lock{ display:none; }
+
+.admin-lock{
+  position:fixed; inset:0; z-index:500;
+  display:flex; align-items:center; justify-content:center;
+  background: var(--black);
+  padding: 24px;
+}
+.admin-lock-box{
+  width:100%; max-width: 380px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--card-border);
+  padding: 44px 32px;
+  text-align:center;
+}
+.admin-lock-title{
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin: 0 0 8px;
+}
+.admin-lock-sub{
+  color: var(--grey);
+  font-size: .85rem;
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+#adminLockForm{ display:flex; flex-direction:column; gap: 14px; }
+#adminLockInput{
+  width:100%;
+  background: rgba(0,0,0,.5);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 15px;
+  color: var(--white);
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: .9rem;
+  text-align:center;
+  letter-spacing: .1em;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+#adminLockInput:focus{
+  outline:none;
+  border-color: var(--maroon-bright);
+  box-shadow: 0 0 0 3px rgba(122,26,31,.2);
+}
+#adminLockInput.is-shake{ animation: adminLockShake .35s ease; border-color:#e06a6a; }
+@keyframes adminLockShake{
+  0%, 100%{ transform: translateX(0); }
+  25%{ transform: translateX(-6px); }
+  75%{ transform: translateX(6px); }
+}
+.admin-lock-error{
+  min-height: 1.2em;
+  font-size: .8rem;
+  color: #e06a6a;
+  margin: 16px 0 0;
+}
+
+.admin-logout{
+  position:fixed; top:14px; right:20px; z-index:50;
+  font-family: var(--font-body);
+  font-size:.72rem; letter-spacing:.05em; text-transform:uppercase;
+  color: var(--grey);
+  background: rgba(0,0,0,.4);
+  border: 1px solid var(--card-border);
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor:pointer;
+  transition: color .2s ease, border-color .2s ease;
+}
+.admin-logout:hover{
+  color: var(--white);
+  border-color: var(--maroon-bright);
+}

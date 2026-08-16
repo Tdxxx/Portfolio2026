@@ -3,14 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Admin — Manage Projects</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<!-- password gate — hides .admin-shell until js/admin-auth.js confirms the hash -->
+<div class="admin-lock">
+  <div class="admin-lock-box">
+    <h1 class="admin-lock-title">Admin Access</h1>
+    <p class="admin-lock-sub">This area is private. Enter the password to continue.</p>
+    <form id="adminLockForm">
+      <input type="password" id="adminLockInput" placeholder="PASSWORD" autocomplete="current-password" required>
+      <button type="submit" class="btn-send">Unlock</button>
+    </form>
+    <p id="adminLockError" class="admin-lock-error"></p>
+  </div>
+</div>
+<button type="button" id="adminLogout" class="admin-logout">Log out</button>
+
 <header class="header">
     <a href="index.html" class="logo">Portfolio</a>
-    <nav class="navabr">
+    <nav class="navbar">
         <a href="index.html">Home</a>
         <a href="admin.html">Admin</a>
     </nav>
@@ -189,6 +204,7 @@
 
 <footer></footer>
 
+<script src="js/admin-auth.js"></script>
 <script src="js/admin.js"></script>
 </body>
 </html>
