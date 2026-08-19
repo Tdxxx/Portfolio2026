@@ -1,14 +1,14 @@
 [
   {
     "id": "032626",
-    "title": "",
+    "title": "EDEN",
     "client": "EDEN — Brand Identity for a Luxury Plant Shop",
     "tags": [
       "Logo Design",
       "Branding"
     ],
     "cardTextColor": "light",
-    "cover": "./image/portfolioSubjects/EDEN/Edengreenonbeige.svg",
+    "cover": "./image/Artboard 2 copy.svg",
     "type": "Brochure",
     "pages": "12",
     "format": "A5",
@@ -18,22 +18,59 @@
       {
         "label": "Typography Detail",
         "caption": "The serif was chosen over trendy rounded sans-serifs to signal heritage and quiet luxury instead of generic eco-branding.",
-        "image": "./image/portfolioSubjects/EDEN/EdenTypefaces.svg"
+        "image": "./image/Artboard 2 copy 2.svg"
       },
       {
         "label": "Grid / Layout",
         "caption": "The grid shows each letterform boxed to its own vertical column, with horizontal guides pinning the baseline and cap-height — keeping proportions, spacing, and the leaf-D substitution mathematically consistent and reproducible at any scale.",
-        "image": "./image/portfolioSubjects/EDEN/edengird.svg"
+        "image": "./image/Artboard 2 copy 3.svg"
       },
       {
         "label": "Special Element",
         "caption": "whole conecpt was centered around communicating Warmth, trust, and quiet luxury — the kind of calm, grounded feeling you get walking into a sunlit greenhouse.",
-        "image": "./image/portfolioSubjects/EDEN/mockup.png"
+        "image": "./image/mockup.png"
       },
       {
         "label": "Print Detail",
         "caption": "",
-        "image": "./image/portfolioSubjects/EDEN/Aug 19, 2026, 08_24_15 PM.png"
+        "image": "./image/Aug 19, 2026, 08_24_15 PM.png"
+      }
+    ]
+  },
+  {
+    "id": "08102023",
+    "title": "RV park",
+    "client": "Upwork project by Fairland RV Park",
+    "tags": [
+      "Logo Design"
+    ],
+    "cardTextColor": "light",
+    "cover": "./image/RVparkcover.png",
+    "type": "",
+    "pages": "",
+    "format": "",
+    "year": "",
+    "brief": "A custom logo built around the nostalgia of classic American road trips and RV camping culture. The mark blends mid-century travel poster illustration with a modern, clean linework style — merging retro warmth with contemporary versatility. Reference points spanned vintage national park badges, 1960s trailer branding, and hand lettered roadside signage, synthesized into a single cohesive identity rather than a direct pastiche of any one influence. The result balances the comfort and familiarity of old-school RV travel with a mark that holds up on modern applications from vehicle decals to digital platforms.",
+    "details": [
+      {
+        "label": "Typography Detail",
+        "caption": "A bold serif for \"FAIRLAND RV PARK\" gives it road-sign sturdiness and vintage credibility, paired with a loose, hand-lettered script for the tagline to keep it warm and personal  echoing hand-painted camp signage.",
+        "image": "./image/typography.png"
+      },
+      {
+        "label": "Grid / Layout",
+        "caption": "",
+        "image": "./image/placeholder.png"
+      },
+      {
+        "label": "Special Element",
+        "caption": "",
+        "image": "./image/mockup.png"
+      },
+      {
+        "label": "Print Detail",
+        "caption": "",
+        "image": "./image/placeholder.png"
       }
     ]
   }
