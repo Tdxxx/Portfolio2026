@@ -1,14 +1,14 @@
 [
   {
     "id": "032626",
-    "title": "EDEN",
+    "title": "",
     "client": "EDEN — Brand Identity for a Luxury Plant Shop",
     "tags": [
       "Logo Design",
       "Branding"
     ],
     "cardTextColor": "light",
-    "cover": "./image/Artboard 2 copy.svg",
+    "cover": "./image/portfolioSubjects/EDEN/Edengreenonbeige.svg",
     "type": "Brochure",
     "pages": "12",
     "format": "A5",
@@ -18,22 +18,22 @@
       {
         "label": "Typography Detail",
         "caption": "The serif was chosen over trendy rounded sans-serifs to signal heritage and quiet luxury instead of generic eco-branding.",
-        "image": "./image/Artboard 2 copy 2.svg"
+        "image": "./image/portfolioSubjects/EDEN/EdenTypefaces.svg"
       },
       {
         "label": "Grid / Layout",
         "caption": "The grid shows each letterform boxed to its own vertical column, with horizontal guides pinning the baseline and cap-height — keeping proportions, spacing, and the leaf-D substitution mathematically consistent and reproducible at any scale.",
-        "image": "./image/Artboard 2 copy 3.svg"
+        "image": "./image/portfolioSubjects/EDEN/edengird.svg"
       },
       {
         "label": "Special Element",
         "caption": "whole conecpt was centered around communicating Warmth, trust, and quiet luxury — the kind of calm, grounded feeling you get walking into a sunlit greenhouse.",
-        "image": "./image/mockup.png"
+        "image": "./image/portfolioSubjects/EDEN/mockup.png"
       },
       {
         "label": "Print Detail",
         "caption": "",
-        "image": "./image/Aug 19, 2026, 08_24_15 PM.png"
+        "image": "./image/portfolioSubjects/EDEN/Aug 19, 2026, 08_24_15 PM.png"
       }
     ]
   }
