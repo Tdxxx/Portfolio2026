@@ -1,78 +1,40 @@
 [
   {
-    "id": "eden",
-    "title": "Eden",
-    "tags": ["Logo Design", "Branding"],
-    "cover": "./image/eden-cover.png",
+    "id": "032626",
+    "title": "EDEN",
+    "client": "EDEN — Brand Identity for a Luxury Plant Shop",
+    "tags": [
+      "Logo Design",
+      "Branding"
+    ],
     "cardTextColor": "light",
-    "client": "Eden",
+    "cover": "./image/Artboard 2 copy.svg",
     "type": "Brochure",
-    "pages": "12 pp",
-    "format": "A4 / A5",
-    "year": "2026",
-    "brief": "What is this document for? Where is it distributed — print, PDF, both? Who reads it and what do they need to take away? Note how much design freedom you had vs. strict brand guidelines.",
+    "pages": "12",
+    "format": "A5",
+    "year": "2025",
+    "brief": "The challenge was to design an identity for a plant shop that felt rooted in luxury and nature rather than typical eco-branding clichés. To solve this, the letter D in the wordmark was replaced with a monstera leaf silhouette, fusing type and botanical form into a single mark instead of pairing a logo icon with separate lettering. A high-contrast serif typeface was chosen over the rounded sans-serifs common in the plant space to signal heritage and quiet luxury, while a warm cream background paired with a deep olive green evokes sunlight through foliage without leaning on expected \"plant-shop green.\" These decisions together produce a mark that's distinctive, legible at small scale, and communicates the brand's biophilic, sustainability-driven positioning through the logo itself.",
     "details": [
-      { "label": "Typography Detail", "caption": "Cropped headline treatment", "image": "./image/eden-detail-1.png" },
-      { "label": "Grid / Layout", "caption": "Show column grid logic", "image": "./image/eden-detail-2.png" },
-      { "label": "Special Element", "caption": "Pull quote, icon, infographic", "image": "./image/eden-detail-3.png" },
-      { "label": "Print Detail", "caption": "Finishing, paper, texture", "image": "./image/eden-detail-4.png" }
-    ]
-  },
-  {
-    "id": "sapperavi",
-    "title": "Sapperavi",
-    "tags": ["Logo Design", "UI/UX Redesign"],
-    "cover": "./image/sapperavi-cover.png",
-    "cardTextColor": "light",
-    "client": "Sapperavi",
-    "type": "UI/UX Redesign",
-    "pages": "8 screens",
-    "format": "Web",
-    "year": "2026",
-    "brief": "What is this document for? Where is it distributed — print, PDF, both? Who reads it and what do they need to take away? Note how much design freedom you had vs. strict brand guidelines.",
-    "details": [
-      { "label": "Typography Detail", "caption": "Cropped headline treatment", "image": "./image/sapperavi-detail-1.png" },
-      { "label": "Grid / Layout", "caption": "Show column grid logic", "image": "./image/sapperavi-detail-2.png" },
-      { "label": "Special Element", "caption": "Pull quote, icon, infographic", "image": "./image/sapperavi-detail-3.png" },
-      { "label": "Print Detail", "caption": "Finishing, paper, texture", "image": "./image/sapperavi-detail-4.png" }
-    ]
-  },
-  {
-    "id": "vtg-banners",
-    "title": "VTG - Banners",
-    "tags": ["Print Design"],
-    "cover": "./image/vtg-cover.png",
-    "cardTextColor": "dark",
-    "client": "VTG",
-    "type": "Banner Set",
-    "pages": "4 banners",
-    "format": "Various",
-    "year": "2026",
-    "brief": "What is this document for? Where is it distributed — print, PDF, both? Who reads it and what do they need to take away? Note how much design freedom you had vs. strict brand guidelines.",
-    "details": [
-      { "label": "Typography Detail", "caption": "Cropped headline treatment", "image": "./image/vtg-detail-1.png" },
-      { "label": "Grid / Layout", "caption": "Show column grid logic", "image": "./image/vtg-detail-2.png" },
-      { "label": "Special Element", "caption": "Pull quote, icon, infographic", "image": "./image/vtg-detail-3.png" },
-      { "label": "Print Detail", "caption": "Finishing, paper, texture", "image": "./image/vtg-detail-4.png" }
-    ]
-  },
-  {
-    "id": "fairland-rv-camp",
-    "title": "Fairland RV Camp",
-    "tags": ["Logo Design"],
-    "cover": "./image/fairland-cover.png",
-    "cardTextColor": "light",
-    "client": "Fairland RV Camp",
-    "type": "Logo & Identity",
-    "pages": "—",
-    "format": "Various",
-    "year": "2026",
-    "brief": "What is this document for? Where is it distributed — print, PDF, both? Who reads it and what do they need to take away? Note how much design freedom you had vs. strict brand guidelines.",
-    "details": [
-      { "label": "Typography Detail", "caption": "Cropped headline treatment", "image": "./image/fairland-detail-1.png" },
-      { "label": "Grid / Layout", "caption": "Show column grid logic", "image": "./image/fairland-detail-2.png" },
-      { "label": "Special Element", "caption": "Pull quote, icon, infographic", "image": "./image/fairland-detail-3.png" },
-      { "label": "Print Detail", "caption": "Finishing, paper, texture", "image": "./image/fairland-detail-4.png" }
+      {
+        "label": "Typography Detail",
+        "caption": "The serif was chosen over trendy rounded sans-serifs to signal heritage and quiet luxury instead of generic eco-branding.",
+        "image": "./image/Artboard 2 copy 2.svg"
+      },
+      {
+        "label": "Grid / Layout",
+        "caption": "The grid shows each letterform boxed to its own vertical column, with horizontal guides pinning the baseline and cap-height — keeping proportions, spacing, and the leaf-D substitution mathematically consistent and reproducible at any scale.",
+        "image": "./image/Artboard 2 copy 3.svg"
+      },
+      {
+        "label": "Special Element",
+        "caption": "whole conecpt was centered around communicating Warmth, trust, and quiet luxury — the kind of calm, grounded feeling you get walking into a sunlit greenhouse.",
+        "image": "./image/mockup.png"
+      },
+      {
+        "label": "Print Detail",
+        "caption": "",
+        "image": "./image/Aug 19, 2026, 08_24_15 PM.png"
+      }
     ]
   }
 ]
