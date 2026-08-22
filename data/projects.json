@@ -62,7 +62,70 @@
         "caption": "",
         "image": "./image/portfolioSubjects/RVpark/mockup.png"
       }
-      
+
+    ]
+  },
+  {
+    "id": "sapperavi",
+    "title": "Sapperavi",
+    "client": "SAPPERAVI — Brand Identity & Mobile App for a Wine Discovery Platform",
+    "tags": ["UI/UX Design", "Branding", "Mobile App"],
+    "cardTextColor": "light",
+    "cover": "./image/portfolioSubjects/Sapperavi/Sapperavicover.png",
+    "type": "UI/UX Design & Brand Identity",
+    "pages": "",
+    "format": "Mobile App (iOS)",
+    "year": "",
+    "accentColor": "#c23b6b",
+    "accentGradient": "linear-gradient(150deg, #33081a 0%, #7a1030 38%, #b8215f 72%, #e0679a 100%)",
+    "brief": "A university project to design the full brand identity and mobile app experience for Sapperavi, named after the Saperavi grape at the heart of Georgian winemaking. The brand needed to feel rooted in that heritage without falling into rustic wine-label cliches, so the mark takes the shape of a single wine droplet caught mid-fall, split into two tones to suggest depth and movement rather than a static icon. A deep wine-red to magenta gradient carries that same idea into the UI itself, standing in for the color of Saperavi wine as it's poured and swirled in the glass, while soft, fully rounded input fields and buttons throughout the app keep the experience feeling warm and approachable rather than corporate. The onboarding flow opens on a literal pour animation before moving into login and sign-up, so the brand's central visual metaphor is the first thing a new user sees, not just a logo screen to click past.",
+    "details": [
+      {
+        "label": "Onboarding / Entry Screen",
+        "caption": "Wine mid-pour into a glass sets the brand's central visual metaphor before the user ever taps a button, with Log In and Sign Up as the only two actions on screen.",
+        "image": "./image/portfolioSubjects/Sapperavi/entreepage.png",
+        "frame": "phone"
+      },
+      {
+        "label": "Splash Screen",
+        "caption": "The wordmark and droplet mark sit alone on a flat wine-red field, giving the logo room to breathe as the app's loading state.",
+        "image": "./image/portfolioSubjects/Sapperavi/firstframe.png",
+        "frame": "phone"
+      },
+      {
+        "label": "Login Screen",
+        "caption": "A wine-to-magenta gradient background with fully rounded, semi-transparent input fields keeps returning users' flow short: two fields, one action.",
+        "image": "./image/portfolioSubjects/Sapperavi/LOG_IN_PAGE.png",
+        "frame": "phone"
+      },
+      {
+        "label": "Sign Up Screen",
+        "caption": "Registration sits over a photographic wine backdrop rather than a flat color, with an avatar upload prompt placed above the form to make the account feel personal from the first step.",
+        "image": "./image/portfolioSubjects/Sapperavi/SIGN_UP_PAGE.png",
+        "frame": "phone"
+      }
+    ],
+    "gallery": [
+      {
+        "image": "./image/portfolioSubjects/Sapperavi/firstframe.png",
+        "caption": "Splash",
+        "frame": "phone"
+      },
+      {
+        "image": "./image/portfolioSubjects/Sapperavi/entreepage.png",
+        "caption": "Onboarding",
+        "frame": "phone"
+      },
+      {
+        "image": "./image/portfolioSubjects/Sapperavi/LOG_IN_PAGE.png",
+        "caption": "Log in",
+        "frame": "phone"
+      },
+      {
+        "image": "./image/portfolioSubjects/Sapperavi/SIGN_UP_PAGE.png",
+        "caption": "Sign up",
+        "frame": "phone"
+      }
     ]
   }
 ]
